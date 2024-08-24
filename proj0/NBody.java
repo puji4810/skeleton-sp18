@@ -18,17 +18,16 @@ public class NBody {
 		return planets;
 	}
 
-	public static void background(double radius) {
+	private static void background(double radius) {
 		StdDraw.setScale(-radius, radius);
 		StdDraw.clear();
 		StdDraw.picture(0, 0, "images/starfield.jpg");
 		StdDraw.show();
 	}
 
-	public static void draw() {
-		for (Planet p : my_planets) {
-			StdDraw.picture(p.xxPos, p.yyPos, "images/" + p.imgFileName);
-			StdDraw.show();
+	private static void draw() {
+		for (Planet planet : my_planets) {
+			planet.draw();
 		}
 	}
 
